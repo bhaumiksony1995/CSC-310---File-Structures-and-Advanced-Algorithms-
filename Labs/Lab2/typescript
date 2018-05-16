@@ -1,0 +1,49 @@
+Script started on Tue 07 Feb 2017 10:00:59 PM EST
+]0;sony_bp@cobra:~/CSC310/Labs/Lab2[?1034h[sony_bp@cobra Lab2]$ c++ fileSum.cpp 
+]0;sony_bp@cobra:~/CSC310/Labs/Lab2[sony_bp@cobra Lab2]$ cat fileSum.cpp 
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main (int argc, char *argv[])
+{
+	ifstream myFile;
+	myFile.open("textFile.txt");
+
+	int current;
+	int compare;
+	int sum;
+
+	while(!myFile.eof())
+	{
+    		myFile >> current;
+
+		if(myFile.fail())
+		{
+			myFile.clear();
+			myFile >> compare;
+
+			if(compare != ',')
+			{
+				return -1;
+			}
+		}
+
+		else
+		{
+			sum += current;
+		}
+	}
+
+	cout << "The sum is " << sum << endl;
+
+return 0;
+}
+
+]0;sony_bp@cobra:~/CSC310/Labs/Lab2[sony_bp@cobra Lab2]$ clear
+[H[2J]0;sony_bp@cobra:~/CSC310/Labs/Lab2[sony_bp@cobra Lab2]$ a.out textFile.txt 
+]0;sony_bp@cobra:~/CSC310/Labs/Lab2[sony_bp@cobra Lab2]$ exit
+exit
+
+Script done on Tue 07 Feb 2017 10:01:16 PM EST
